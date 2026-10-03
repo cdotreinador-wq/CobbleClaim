@@ -20,11 +20,11 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Dar permissão ao Gradle
-        run: chmod +x gradlew
+      - name: Configurar Gradle
+        uses: gradle/actions/setup-gradle@v4
 
-      - name: Compilar mod
-        run: ./gradlew build
+      - name: Compilar CobbleClaim
+        run: gradle build
 
       - name: Publicar JAR
         uses: actions/upload-artifact@v4
